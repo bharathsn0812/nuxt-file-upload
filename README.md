@@ -1,6 +1,7 @@
 # nuxt-file-upload
 
 Simple Nuxt App for uploading image file to S3 Bucket
+AWS Credentials are encapsulated in Server Middleware
 
 ## Build Setup
 
@@ -16,9 +17,4 @@ $ yarn dev
 # build for production and launch server
 $ yarn build
 $ yarn start
-
-# generate static project
-$ yarn generate
 ```
-
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).

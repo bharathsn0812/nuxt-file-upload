@@ -1,14 +1,11 @@
 const app = require('express')()
 const bodyParser = require('body-parser')
-const s3Upload = require('./s3Upload')
+const s3Operations = require('./s3Operations')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-app.get('/', function (req, res) {
-  res.status(200).send('hi')
-})
-app.use('/s3upload', s3Upload)
+app.use('/s3', s3Operations)
 
 // Error Handle
 app.use(function (err, req, res, next) {

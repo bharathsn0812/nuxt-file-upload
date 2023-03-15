@@ -3,8 +3,7 @@ const path = require('path')
 const express = require('express')
 const router = express.Router()
 const multer = require('multer')
-const S3Client = require('@aws-sdk/client-s3').S3Client
-const PutObjectCommand = require('@aws-sdk/client-s3').PutObjectCommand
+const { S3Client, PutObjectCommand } = require('@aws-sdk/client-s3')
 const basicAuthMiddleware = require('./basicAuthMiddleware').basicAuthMiddleware
 
 const upload = multer({
@@ -23,7 +22,7 @@ const s3Upload = async (files, fileInfo) => {
     fileInfo.timestampInMilliseconds = timestampInMilliseconds
     return {
       Bucket: process.env.AWS_BUCKET_NAME,
-      Key: `images/${timestampInMilliseconds}${fileExtension}`,
+      Key: `${timestampInMilliseconds}${fileExtension}`,
       Body: file.buffer,
     }
   })

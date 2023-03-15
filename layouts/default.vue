@@ -1,5 +1,6 @@
 <template>
-  <b-container>
+  <b-container class="text-white">
+    <h1 class="text-center">Simple Image File upload to S3</h1>
     <Nuxt />
   </b-container>
 </template>
@@ -19,5 +20,9 @@ body {
 
 .bg-blue {
   background-color: #1172b2;
+}
+
+.text-center {
+  text-align: center;
 }
 </style>
